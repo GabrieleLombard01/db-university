@@ -27,7 +27,7 @@ SELECT * FROM `teachers` WHERE `phone` IS NOT NULL;
 -- QUERY CON GROUP BY:
 
 -- 1. Contare quanti iscritti ci sono stati ogni anno
-
+SELECT COUNT(`enrolment_date`) AS `enrolment_number`, `enrolment_date` FROM `students` GROUP BY `enrolment_date`;
 
 -- 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 
