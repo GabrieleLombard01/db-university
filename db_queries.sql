@@ -57,6 +57,7 @@ SELECT C.name AS 'Corso', t.surname AS 'Insegnante', t.id AS 'ID Insegnante' FRO
 SELECT S.name AS 'Nome', S.surname AS 'Cognome', DEG.name AS 'Corso di laurea', DEG.level AS 'Livello', DEP.name AS 'Dipartimento' FROM `students` AS S JOIN `degrees` AS DEG ON S.degree_id = DEG.id JOIN `departments` AS DEP ON DEG.department_id = DEP.id ORDER BY S.name ASC, S.surname ASC;
 
 -- 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
+SELECT `degrees`.`name`, `courses`.`name`, `teachers`.`name`, `teachers`.`surname` FROM `degrees` JOIN `courses` ON `degrees`.`id` = `courses`.`degree_id` JOIN `course_teacher` ON `courses`.`id` = `course_teacher`.`course_id` JOIN `teachers` ON `course_teacher`.`teacher_id` = `teachers`.`id`;
 
 -- 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
 
